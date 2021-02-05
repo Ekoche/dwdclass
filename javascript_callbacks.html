@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Callback</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <p id="result4"></p>
+    <script>
+
+        //Simple function 1
+        function displayResult(x){
+            document.getElementById('result').innerHTML = x
+        }
+
+        //Simple function 2
+        function calArea(base, height, callbackFunc){
+            let area = 1/2 * base * height
+            //Callback Function
+            callbackFunc(area)
+        }
+
+        calArea(10,45,displayResult)
+
+        //Asynchronous Javascript functions
+        //Example 1: setTimeout function
+
+        setTimeout(writeText,3000)
+
+        function writeText(){
+            document.getElementById('result2').innerHTML = 'JavaScript is easy and fun to learn'
+        }
+
+
+        //Example 2: setInterval function
+
+        function today(){
+            let d = new Date()
+                document.getElementById('time').innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        }
+        setInterval(today, 1000)
+
+        //JS Promises
+
+        function displayResult2(x){
+            document.getElementById('result3').innerHTML = x
+        }
+
+        let myPromise = new Promise(function(resolve, reject){
+            let x = 0
+
+            //if we change x using some code
+
+            if (x == 0){
+                resolve("OK")
+            }else {
+                reject("Error")
+            }
+        });
+
+        myPromise.then(
+            function(value){displayResult2(value)},
+            function(error){displayResult2(error)}
+        )
+        
+        //async/await
+        //fetch APIs
+
+        const fetchData = async () => {
+            //get the response from the API
+            const res = await fetch('https:/swapi.dev/api/people/?page/1')
+
+            const starWarsdata = await res.json()
+            console.log(starWarsdata)
+            document.getElementById('result4').innerHTML = starWarsdata.results
+        }
+        fetchData()
+    </script>
+</body>
+</html>
