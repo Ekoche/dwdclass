@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+</head>
+<body>
+    <h2>Regular Expressions</h2>
+    <h1 id="text"></h1>
+
+    <h2>Error Handling</h2>
+        <p id="error"></p>
+
+        <div class="inputValidation">
+            <p>Enter your selection between 10 and 15:</p>
+
+            <input type="text" id="userinput">
+            <button id="testBtn">Test Input</button>
+            <small id="errormsg"></small>
+        </div>
+    <script>
+        //A regEx is a sequence of x-ters that forms a search pattern 
+        //The search pattern can be used for textsearch, text replace
+        //It can be used for validation
+        //Syntax: /pattern/modifiers;
+        //Examples of modifiers include i,g,m
+        //var pattern = /hiitonline/i
+
+        //Using regEx with string methods
+
+        //Search method
+        let str = "visit Hiitonline.com"
+           console.log( str.search("hiitonline")) //returns a negative value because the string is not found
+           console.log( str.search("Hiitonline")) //returns the index location of the first x-ter in the string.
+
+           //Using regEx
+           let n = str.search(/hiitonline/i)
+           console.log(n)
+           //The modifier 'i' performs a case insensitive search
+            let m = str.search(/en.c/i)
+            console.log(m)
+
+        // Replace method
+        let str2 = "visit github";
+        let res = str2.replace("Github", "Hiitonline")
+
+        let txt = str2.replace(/Github/i, "Hiitonline")
+        console.log(res, txt)
+
+        //Modifiers
+        //i - performs case-insensitive matching
+        //g - performs a global match
+        //m - multiline matching
+
+        //[abc] - brackets are usd to find the range of x-ters
+        //[0-9] - match between the range
+        //(x|y) - match either of the two separated by |
+        // /\d/ - checks for digits
+
+        //Example
+        function myFunc(){
+            str = "Is there more to being a developer?";
+            str2 = "red, blue, green, yellow, re, bl, red, white, 20%, 50%,100%"
+
+            let pattern = /[er]/g;
+            let pattern2 = /er/g;
+            let pattern3 = /(red|blue)/g;
+            let pattern4 = /\d/g;
+            
+            let result = str.match(pattern)
+            let result2 = str.match(pattern2)
+            let result3 = str2.match(pattern3)
+            let result4 = str2.match(pattern4)
+
+            document.getElementById('text').innerHTML = result + "<br>" + result2 + "<br>" + result3 + "<br>" + result4;
+        }
+        myFunc()
+
+        //Error Handling 
+        //try statement - this lets you test a block of code for errors
+        //catch statement - this lets you handle the error
+        //throw statement - this lets you create custom errors
+        //finally statement - this will let you execute code after try and catch regardless of the result
+
+        //Example
+        try{
+            let x = 4;
+            result = x + y
+        }
+        catch(error){
+            //console.log(error.name, error.message); //componenets of an error: name, message
+            document.getElementById('error').innerHTML = error.name + ": " + error.message
+        }
+       //Example to validate user input
+       const myTestFunc = () =>{
+           let message , z;
+               message = document.getElementById('errormsg')
+               message.innerHTML = "";
+            z = document.getElementById('userinput').value;
+            try{
+                if (z == "") throw "Field cannot be empty"
+                if (isNaN(z)) throw "Not a number"
+                z = Number(z);
+                if (z < 10) throw "Number is too low"
+                if (z > 15) throw "Number is too high"
+                else{
+                    message.innerHTML = " Number is Okay"
+                }
+            }
+            catch(error){
+                message.innerHTML = "Input Error: " + error;
+            }
+            finally{
+                //This will run regardless of the results from the try and catch
+                document.getElementById('userinput').value = "";
+            }
+       }
+
+       document.getElementById('testBtn').onclick = myTestFunc
+    </script>
+</body>
+</html>

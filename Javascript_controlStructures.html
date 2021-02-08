@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structures</title>
+</head>
+<style>
+    .first{
+        background-color: mediumorchid;
+        min-width: 120px;
+    }
+    .box{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    input{
+        padding: 1rem; 
+        width: 300px;
+        font-size: 1rem;
+    }
+    small{
+        color: red;
+        padding: 1rem;
+        font-weight: bolder;
+    }
+
+    button{
+        width: 70px;
+        height: 30px;
+    }
+</style>
+<body>
+    <div class="first">
+        <h2 id="greeting"></h2>
+        <h2 id="person"></h2>
+        <h2 id="cars"></h2>
+        <h2 id="weekday"></h2>
+    </div>
+    <div class="box">
+        <h2>Enter your age</h2>
+        <input placeholder="Enter your age" type="text" id="age" name="age">
+        
+        <small id="errorMsg"></small>
+        <h2 id="colors"></h2>
+        <h2 id="student"></h2>
+
+         <button onclick="checkEligibility();">Submit</button> -->
+    </div>
+    <div>
+        <div id="buttonContainer"></div>
+    </div>
+    <script src="js/controlStructures2.js"></script>
+</body>
+</html>

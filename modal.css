@@ -1,0 +1,59 @@
+:root{
+    --lightShadow: 0 2px 4px rgba(0,0,0,0.1);
+    --darkShadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: palevioletred;
+    font-family:'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+button{
+    background-color: plum;
+    color: white;
+    border-radius: 4px;
+    border: 0;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.modal-container{
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /*makes it possible for the button beneath the text to be clicked  */
+    transition: opacity 0..3s ease;
+
+    opacity: 0;
+}
+.modal-container.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal{
+    background-color: #fff;
+    width: 600px;
+    max-width: 100%;
+    padding: 2.5rem 4rem;
+    border-radius: 4px;
+    box-shadow: var(--darkShadow);
+}
+.modal h1{
+    margin: 0;
+}
+.modal p{
+    opacity: 0.7;
+}

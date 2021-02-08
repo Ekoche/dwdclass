@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+    <style>
+        #box1{padding: 1rem 3rem;
+                background-color: rebeccapurple;
+                color: white;
+                margin: 0 auto 1rem auto;
+            }
+        #box2{Padding: 1rem 3rem;
+                background-color: gold;
+                color: white;
+                margin: 0 auto 1rem auto;
+        }
+        h4{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .one{
+            display: flex;
+            flex-direction: row;
+        }
+        .two{
+            display: flex;
+            flex-direction: row;
+        }
+        span{
+            margin-left: 15px;
+        }
+        img{
+            width: 500px;
+            height: 300px;
+    
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <h2 id="timer"></h2>
+    </div>
+    <div id="box1">
+        <h2 id="quotes"></h2>
+    </div>
+    <div id="box2">
+        <h2 id="scrollBox"></h2>
+    </div>
+    <h1>JS Objects</h1>
+    <div class="container" style="display: flex; flex-direction: column;">
+
+        <div class="one">
+            <div style="background-color: black; color: #d3c019; width: 500px; padding: 1rem; margin: 1rem; border-radius: 10px;">
+                <h2 id="trans"> </h2>
+                <hr/>
+                <img src="./images/transcorp.jpg" alt="">
+                <h4>Available Rooms:  <span id="avail"></span></h4>
+                <h4>Rooms: <span id="room"></span></h4>
+                <h4>booked: <span id="book"></span></h4>
+                <h4>Pool: <span id="pool"></span></h4>
+                <h4>Gym: <span id="gym"></span></h4>
+            </div>
+            <div style="background-color: rgb(43, 5, 5); color: #d3c019; width: 500px; padding: 1rem; margin: 1rem; border-radius: 10px;">
+                <h2 id="sea"></span> </h2>
+                <hr/>
+                <img src="./images/sea.jpg" alt="">
+                <h4>Available Rooms:  <span id="avail1"></span></h4>
+                <h4>Rooms: <span id="room1"></span></h4>
+                <h4>booked: <span id="book1"></span></h4>
+                <h4>Pool: <span id="pool1"></span></h4>
+                <h4>Gym: <span id="gym1"></span></h4>
+            </div>
+        </div>
+        <div class="two">
+            <div style="background-color: rgb(9, 9, 43); color: #d3c019; width: 500px; height: 500px; padding: 1rem; margin: 1rem; border-radius: 10px;">
+                <h2 id="eko"></span> </h2>
+                <hr/>
+                <img src="./images/eko.jpg" alt="">
+                <h4>Available Rooms:  <span id="avail2"></span></h4>
+                <h4>Rooms: <span id="room2"></span> </h4>
+                <h4>Booked: <span id="book2"></span></h4>
+                <h4>Pool: <span id="pool2"></span></h4>
+                <h4>Gym: <span id="gym2"></span></h4>
+            </div>
+            <div style="background-color: rgb(34, 6, 34); color: #d3c019; width: 500px; height: 500px; padding: 1rem; margin: 1rem; border-radius: 10px;">
+                <h2 id="city"></span> </h2>
+                <hr/>
+                <img src="./images/city.jpg" alt="">
+                <h4>Available Rooms:  <span id="avail3"></span></h4>
+                <h4>Rooms: <span id="room3"></span></h4>
+                <h4>Booked: <span id="book3"></span></h4>
+                <h4>Pool: <span id="pool3"></span></h4>
+                <h4>Gym: <span id="gym3"></span></h4>
+            </div>    
+        </div>
+    </div>
+    <script src="js/objects.js"></script>
+    <script src="js/quotesGenerator.js"></script>
+</body>
+</html>
